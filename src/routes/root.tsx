@@ -1,11 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 import styles from './root.module.scss';
 
 function Root() {
   return (
     <div className={styles.container}>
-      <Outlet />
+      <Navbar />
+      <div className={styles.stretch}>
+        <Outlet />
+      </div>
+      <Navbar />
     </div>
   );
 }
