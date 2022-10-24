@@ -1,17 +1,12 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+import styles from './root.module.scss';
 
 function Root() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <a href="contacts/1">Your Name</a>
-        </li>
-        <li>
-          <a href="contacts/2">Your Friend</a>
-        </li>
-      </ul>
-    </nav>
+    <div className={styles.container}>
+      <Outlet />
+    </div>
   );
 }
 

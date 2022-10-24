@@ -5,9 +5,27 @@ import reportWebVitals from './reportWebVitals';
 import './index.scss';
 import Root from './routes/root';
 import Error from './routes/error';
+import Button from './components/Button';
+import Playground from './components/Playground';
 
 const router = createBrowserRouter([
-  { path: '/', element: <Root />, errorElement: <Error /> },
+  {
+    path: '/',
+    element: <Root />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: 'button/',
+        element: (
+          <div>
+            <Playground>
+              <Button text="Click me!" />
+            </Playground>
+          </div>
+        ),
+      },
+    ],
+  },
 ]);
 
 const root = ReactDOM.createRoot(
