@@ -1,0 +1,15 @@
+// Colors
+$green: #3fbc6d;
+
+// Helper classes
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Media queries
+@mixin desktop {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
