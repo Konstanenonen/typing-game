@@ -1,0 +1,14 @@
+@use '../global.scss' as glob;
+
+.button {
+  background-color: glob.$green;
+  color: white;
+  border-style: none;
+  font-size: 1.5rem;
+  border-radius: 2px;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: glob.$dark-green;
+}

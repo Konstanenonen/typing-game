@@ -1,7 +1,16 @@
 import React from 'react';
+import styles from './Button.module.scss';
 
-function Button() {
-  return <div>This is button</div>;
+interface ButtonProps {
+  text: string;
+}
+
+function Button({ text }: ButtonProps) {
+  return (
+    <button className={styles.button} type="button">
+      {text}
+    </button>
+  );
 }
 
 export default Button;
