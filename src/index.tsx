@@ -6,6 +6,7 @@ import './index.scss';
 import Root from './routes/root';
 import Error from './routes/error';
 import Home from './routes/home';
+import Game from './routes/game';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: 'home/',
         element: <Home />,
+      },
+      {
+        path: 'game/',
+        element: <Game />,
       },
     ],
   },

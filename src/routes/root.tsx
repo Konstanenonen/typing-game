@@ -8,6 +8,7 @@ function Root() {
     <div className={styles.container}>
       <Navbar>
         <Link to="/home">Home</Link>
+        <Link to="/game">Game</Link>
       </Navbar>
       <div className={styles.stretch}>
         <Outlet />
