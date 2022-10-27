@@ -18,11 +18,14 @@ function Game() {
       return <span className={styles.correct}>{word}</span>;
     }
 
-    if (word.length <= inputArray[index].length && word !== inputArray[index]) {
-      return <span className={styles.wrong}>{word}</span>;
+    if (
+      inputArray.length - 1 <= index &&
+      word.length > inputArray[index].length
+    ) {
+      return <span>{word}</span>;
     }
 
-    return <span>{word}</span>;
+    return <span className={styles.wrong}>{word}</span>;
   });
 
   return (
