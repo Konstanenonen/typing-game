@@ -1,16 +1,20 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import styles from './root.module.scss';
 
 function Root() {
   return (
     <div className={styles.container}>
-      <Navbar />
+      <Navbar>
+        <Link to="/home">Home</Link>
+      </Navbar>
       <div className={styles.stretch}>
         <Outlet />
       </div>
-      <Navbar />
+      <Navbar>
+        <p>Made by Konsta Nenonen</p>
+      </Navbar>
     </div>
   );
 }
