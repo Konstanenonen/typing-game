@@ -5,8 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import './index.scss';
 import Root from './routes/root';
 import Error from './routes/error';
-import Button from './components/Button';
-import Playground from './components/Playground';
+import Home from './routes/home';
 
 const router = createBrowserRouter([
   {
@@ -16,13 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: 'home/',
-        element: (
-          <div>
-            <Playground>
-              <Button text="Click me!" />
-            </Playground>
-          </div>
-        ),
+        element: <Home />,
       },
     ],
   },
