@@ -9,22 +9,34 @@ function Game() {
   const [input, setInput] = useState('');
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
-  const wordElements = wordArray.map((word, index) =>
-    word === inputArray[index] ? (
-      <span className={styles.correct}>{word}</span>
-    ) : (
-      <span>{word}</span>
-    )
-  );
+  const wordElements = wordArray.map((word, index) => {
+    if (inputArray[index] === undefined) {
+      return <span>{word}</span>;
+    }
+
+    if (word === inputArray[index]) {
+      return <span className={styles.correct}>{word}</span>;
+    }
+
+    if (word.length <= inputArray[index].length && word !== inputArray[index]) {
+      return <span className={styles.wrong}>{word}</span>;
+    }
+
+    return <span>{word}</span>;
+  });
 
   return (
-    <div>
+    <div className={styles.container}>
       <p className={styles.wordArea}>{wordElements}</p>
-      <input
-        type="text"
+      <textarea
+        className={styles.input}
         value={input}
         onChange={(e: any) => setInput(e.target.value)}
-      />
+        // eslint-disable-next-line jsx-a11y/no-autofocus
+        autoFocus
+      >
+        It was a dark and stormy night...
+      </textarea>
     </div>
   );
 }
