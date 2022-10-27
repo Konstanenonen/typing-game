@@ -1,0 +1,7 @@
+@use '../global.scss' as glob;
+
+.wordArea {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
