@@ -35,15 +35,19 @@ function Game() {
   return (
     <div className={styles.container}>
       <p className={styles.wordArea}>{wordElements}</p>
-      <textarea
-        className={styles.input}
-        value={input}
-        onChange={(e: any) => setInput(e.target.value)}
-        // eslint-disable-next-line jsx-a11y/no-autofocus
-        autoFocus
-      >
-        It was a dark and stormy night...
-      </textarea>
+      <label htmlFor="user-input">
+        Write the above text here:
+        <textarea
+          name="user-input"
+          id="user-input"
+          className={styles.input}
+          value={input}
+          onChange={(e: any) => setInput(e.target.value)}
+          // eslint-disable-next-line jsx-a11y/no-autofocus
+          autoFocus
+          spellCheck="false"
+        />
+      </label>
     </div>
   );
 }

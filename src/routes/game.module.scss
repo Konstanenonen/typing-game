@@ -11,6 +11,10 @@
   flex-wrap: wrap;
   font-weight: bold;
   color: rgb(103, 103, 103);
+  margin-bottom: 50px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 20px;
+  border-radius: 2px;
 }
 
 .correct {
@@ -27,10 +31,18 @@
 }
 
 .input {
-  padding: 10px;
-  font-size: 1rem;
-  margin-top: 50px;
-  border-style: none;
+  margin-top: 20px;
+  font-size: 1.4rem;
   width: 100%;
   height: 300px;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.input:active {
+  border: 1px solid white;
 }
