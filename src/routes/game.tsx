@@ -10,6 +10,10 @@ function Game() {
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
   const wordElements = wordArray.map((word, index) => {
+    if (inputArray.length - 1 === index) {
+      return <span className={styles.current}>{word}</span>;
+    }
+
     if (inputArray[index] === undefined) {
       return <span>{word}</span>;
     }
