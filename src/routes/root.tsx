@@ -7,7 +7,7 @@ function Root() {
   return (
     <div className={styles.container}>
       <Navbar>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/game">Game</Link>
         <Link to="/Credits">Credits</Link>
       </Navbar>
