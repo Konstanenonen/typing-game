@@ -9,21 +9,21 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  font-weight: bold;
+  color: rgb(103, 103, 103);
 }
 
 .correct {
   color: glob.$green;
-  font-weight: bold;
 }
 
 .wrong {
   color: red;
-  font-weight: bold;
 }
 
 .current {
   color: blue;
-  font-weight: bold;
+  border-bottom: 2px solid blue;
 }
 
 .input {
