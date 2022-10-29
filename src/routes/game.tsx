@@ -10,25 +10,22 @@ function Game() {
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
   const wordElements = wordArray.map((word, index) => {
-    if (inputArray.length - 1 === index) {
-      return <span className={styles.current}>{word}</span>;
-    }
-
+    // Return default colored word if it hasn't come up yet
     if (inputArray[index] === undefined) {
       return <span>{word}</span>;
     }
 
+    // Return a highlited word when it is the current word
+    if (inputArray.length - 1 === index) {
+      return <span className={styles.current}>{word}</span>;
+    }
+
+    // Return a green colored word if it was spelled correct
     if (word === inputArray[index]) {
       return <span className={styles.correct}>{word}</span>;
     }
 
-    if (
-      inputArray.length - 1 <= index &&
-      word.length > inputArray[index].length
-    ) {
-      return <span>{word}</span>;
-    }
-
+    // The word wasn't any of the above so it was spelled incorrectly
     return <span className={styles.wrong}>{word}</span>;
   });
 
