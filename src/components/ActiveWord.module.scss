@@ -1,0 +1,16 @@
+@use '../global.scss' as glob;
+
+.correct {
+  color: glob.$green;
+  border-bottom: 2px solid glob.$green;
+}
+
+.wrong {
+  color: red;
+  border-bottom: 2px solid red;
+}
+
+.undefined {
+  color: black;
+  border-bottom: 2px solid black;
+}

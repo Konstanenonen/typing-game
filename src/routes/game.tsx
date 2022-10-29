@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ActiveWord from '../components/ActiveWord';
 import styles from './game.module.scss';
 
 function Game() {
@@ -17,7 +18,8 @@ function Game() {
 
     // Return a highlited word when it is the current word
     if (inputArray.length - 1 === index) {
-      return <span className={styles.current}>{word}</span>;
+      // return <span className={styles.current}>{word}</span>;
+      return <ActiveWord correctWord={word} inputWord={inputArray[index]} />;
     }
 
     // Return a green colored word if it was spelled correct
