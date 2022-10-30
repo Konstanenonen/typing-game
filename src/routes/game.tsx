@@ -8,6 +8,8 @@ function Game() {
   const [input, setInput] = useState('');
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
+  const gameOver = inputArray.length > wordArray.length;
+
   const wordElements = wordArray.map((word, index) => {
     // Return default colored word if it hasn't come up yet
     if (inputArray[index] === undefined) {
@@ -31,12 +33,16 @@ function Game() {
 
   // Sets a random Wikipedia article summary as the game text
   useEffect(() => {
+    setText('');
     fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary')
       .then((response) => response.json())
       .then((data) => {
         setText(data.extract);
+      })
+      .then(() => {
+        setInput('');
       });
-  }, []);
+  }, [gameOver]);
 
   return (
     <div className={styles.container}>
