@@ -29,6 +29,7 @@ function Game() {
     return <span className={styles.wrong}>{word}</span>;
   });
 
+  // Sets a random Wikipedia article summary as the game text
   useEffect(() => {
     fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary')
       .then((response) => response.json())
@@ -39,7 +40,18 @@ function Game() {
 
   return (
     <div className={styles.container}>
-      <p className={styles.wordArea}>{wordElements}</p>
+      {text ? (
+        <p className={styles.wordArea}>{wordElements}</p>
+      ) : (
+        <div className={styles.wordArea}>
+          <div className={styles.skeletonText} />
+          <div className={styles.skeletonText} />
+          <div className={styles.skeletonText} />
+          <div className={styles.skeletonText} />
+          <div className={styles.skeletonText} />
+          <div className={styles.skeletonText} />
+        </div>
+      )}
       <label htmlFor="user-input">
         Write the above text here:
         <textarea
