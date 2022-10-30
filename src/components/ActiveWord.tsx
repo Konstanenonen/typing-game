@@ -13,6 +13,10 @@ function ActiveWord({ correctWord, inputWord }: ActiveWordProps) {
   const letterElements = correctWordArray.map((correctLetter, index) => {
     const inputLetter = inputWordArray[index];
 
+    if (inputWordArray.length > correctWordArray.length) {
+      return <span className={styles.wrong}>{correctLetter}</span>;
+    }
+
     if (inputWordArray[index] === undefined) {
       return <span className={styles.undefined}>{correctLetter}</span>;
     }
