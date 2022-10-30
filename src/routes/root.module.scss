@@ -11,3 +11,15 @@
 .stretch {
   flex: 1;
 }
+
+.navLink {
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+  font-weight: bolder;
+}

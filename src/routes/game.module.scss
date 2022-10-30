@@ -56,7 +56,7 @@
   margin-bottom: 5px;
   // animations
   animation-name: loadingAnimation;
-  animation-duration: 0.5s;
+  animation-duration: 0.8s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -65,7 +65,10 @@
   0% {
     background: rgb(233, 229, 229);
   }
-  100% {
+  50% {
     background: rgb(103, 103, 103);
+  }
+  100% {
+    background: rgb(233, 229, 229);
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, NavLink } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import styles from './root.module.scss';
 
@@ -7,9 +7,15 @@ function Root() {
   return (
     <div className={styles.container}>
       <Navbar>
-        <Link to="/">Home</Link>
-        <Link to="/game">Game</Link>
-        <Link to="/Credits">Credits</Link>
+        <NavLink className={styles.navLink} to="/">
+          Home
+        </NavLink>
+        <NavLink className={styles.navLink} to="/game">
+          Game
+        </NavLink>
+        <NavLink className={styles.navLink} to="/Credits">
+          Credits
+        </NavLink>
       </Navbar>
       <div className={styles.stretch}>
         <Outlet />

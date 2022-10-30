@@ -54,8 +54,6 @@ function Game() {
           <div className={styles.skeletonText} />
           <div className={styles.skeletonText} />
           <div className={styles.skeletonText} />
-          <div className={styles.skeletonText} />
-          <div className={styles.skeletonText} />
         </div>
       )}
       <label htmlFor="user-input">
