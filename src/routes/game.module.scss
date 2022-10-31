@@ -35,7 +35,9 @@
   font-size: 1.4rem;
   width: 100%;
   height: 300px;
-  border: none;
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 15px;
   overflow: auto;
   outline: none;
   -webkit-box-shadow: none;
@@ -56,7 +58,7 @@
   margin-bottom: 5px;
   // animations
   animation-name: loadingAnimation;
-  animation-duration: 0.8s;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
   animation-direction: alternate;
 }
@@ -65,10 +67,7 @@
   0% {
     background: rgb(233, 229, 229);
   }
-  50% {
-    background: rgb(103, 103, 103);
-  }
   100% {
-    background: rgb(233, 229, 229);
+    background: rgb(103, 103, 103);
   }
 }
