@@ -2,8 +2,6 @@ import React from 'react';
 import { useRouteError } from 'react-router-dom';
 
 function Error() {
-  const error = useRouteError();
-
   return (
     <div id="error-page">
       <h1>Oopsie!</h1>
