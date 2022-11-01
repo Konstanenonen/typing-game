@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ActiveWord from '../components/ActiveWord';
+import WordArea from '../components/WordArea';
 import styles from './game.module.scss';
 
 function Game() {
@@ -18,7 +19,6 @@ function Game() {
 
     // Return a highlited word when it is the current word
     if (inputArray.length - 1 === index) {
-      // return <span className={styles.current}>{word}</span>;
       return <ActiveWord correctWord={word} inputWord={inputArray[index]} />;
     }
 
@@ -44,16 +44,7 @@ function Game() {
 
   return (
     <div className={styles.container}>
-      {text ? (
-        <p className={styles.wordArea}>{wordElements}</p>
-      ) : (
-        <div className={styles.wordArea}>
-          <div className={styles.skeletonText} />
-          <div className={styles.skeletonText} />
-          <div className={styles.skeletonText} />
-          <div className={styles.skeletonText} />
-        </div>
-      )}
+      <WordArea loaded={!!text} wordElements={wordElements} />
       <label htmlFor="user-input">
         Write the above text here:
         <textarea
