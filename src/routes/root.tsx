@@ -7,13 +7,28 @@ function Root() {
   return (
     <div className={styles.container}>
       <Navbar>
-        <NavLink className={styles.navLink} to="/">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles.navLinkActive : styles.navLink
+          }
+          to="/home"
+        >
           Home
         </NavLink>
-        <NavLink className={styles.navLink} to="/game">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles.navLinkActive : styles.navLink
+          }
+          to="/game"
+        >
           Game
         </NavLink>
-        <NavLink className={styles.navLink} to="/Credits">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? styles.navLinkActive : styles.navLink
+          }
+          to="/Credits"
+        >
           Credits
         </NavLink>
       </Navbar>
