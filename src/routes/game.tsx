@@ -7,7 +7,7 @@ function Game() {
   // eslint-disable-next-line no-unused-vars
   const [text, setText] = useState('');
   const [input, setInput] = useState('');
-  const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(true);
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
 
@@ -33,14 +33,16 @@ function Game() {
 
   // Sets a random Wikipedia article summary as the game text
   useEffect(() => {
-    setInput('');
-    setText('');
-    fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary')
-      .then((response) => response.json())
-      .then((data) => {
-        setText(data.extract);
-        setGameOver(false);
-      });
+    if (gameOver) {
+      setInput('');
+      setText('');
+      fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary')
+        .then((response) => response.json())
+        .then((data) => {
+          setText(data.extract);
+          setGameOver(false);
+        });
+    }
   }, [gameOver]);
 
   function handleInput(e: React.ChangeEvent<HTMLTextAreaElement>) {
