@@ -61,7 +61,7 @@ function Game() {
           id="user-input"
           className={styles.input}
           value={input}
-          onChange={(e: any) => setInput(e.target.value)}
+          onChange={(e) => setInput(e.target.value)}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus
           spellCheck="false"
