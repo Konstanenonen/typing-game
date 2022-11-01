@@ -12,6 +12,10 @@ function Game() {
   const gameStart = input.length > 0;
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
+  const correctTypedWords = inputArray.reduce(
+    (prev, cur, index) => (cur === wordArray[index] ? prev + 1 : prev),
+    0
+  );
 
   const wordElements = wordArray.map((word, index) => {
     // Return default colored word if it hasn't come up yet
@@ -57,7 +61,7 @@ function Game() {
 
   return (
     <div className={styles.divider}>
-      <Timer start={gameStart} />
+      <Timer start={gameStart} typedWords={correctTypedWords} />
       <div className={styles.container}>
         <WordArea loaded={!!text} wordElements={wordElements} />
         <label htmlFor="user-input">
