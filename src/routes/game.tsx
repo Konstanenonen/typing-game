@@ -7,9 +7,9 @@ function Game() {
   // eslint-disable-next-line no-unused-vars
   const [text, setText] = useState('');
   const [input, setInput] = useState('');
+  const [gameOver, setGameOver] = useState(false);
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
-  const gameOver = inputArray.length > wordArray.length;
 
   const wordElements = wordArray.map((word, index) => {
     // Return default colored word if it hasn't come up yet
@@ -39,8 +39,17 @@ function Game() {
       .then((response) => response.json())
       .then((data) => {
         setText(data.extract);
+        setGameOver(false);
       });
   }, [gameOver]);
+
+  function handleInput(e: React.ChangeEvent<HTMLTextAreaElement>) {
+    setInput(e.target.value);
+
+    if (inputArray.length > wordArray.length) {
+      setGameOver(true);
+    }
+  }
 
   return (
     <div className={styles.container}>
@@ -52,7 +61,7 @@ function Game() {
           id="user-input"
           className={styles.input}
           value={input}
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => handleInput(e)}
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus
           spellCheck="false"
