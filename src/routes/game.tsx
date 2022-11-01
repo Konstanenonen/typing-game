@@ -48,9 +48,9 @@ function Game() {
   function handleInput(e: React.ChangeEvent<HTMLTextAreaElement>) {
     setInput(e.target.value);
 
-    if (inputArray.length > wordArray.length) {
-      setGameOver(true);
-    }
+    const inputArr = e.target.value.split(' ');
+
+    if (inputArr.length > wordArray.length) setGameOver(true);
   }
 
   return (
