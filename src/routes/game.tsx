@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ActiveWord from '../components/ActiveWord';
+import Timer from '../components/Timer';
 import WordArea from '../components/WordArea';
 import styles from './game.module.scss';
 
@@ -8,6 +9,7 @@ function Game() {
   const [text, setText] = useState('');
   const [input, setInput] = useState('');
   const [gameOver, setGameOver] = useState(true);
+  const gameStart = input.length > 0;
   const wordArray = text.split(' ');
   const inputArray = input.split(' ');
 
@@ -54,21 +56,24 @@ function Game() {
   }
 
   return (
-    <div className={styles.container}>
-      <WordArea loaded={!!text} wordElements={wordElements} />
-      <label htmlFor="user-input">
-        Write the above text here:
-        <textarea
-          name="user-input"
-          id="user-input"
-          className={styles.input}
-          value={input}
-          onChange={(e) => handleInput(e)}
-          // eslint-disable-next-line jsx-a11y/no-autofocus
-          autoFocus
-          spellCheck="false"
-        />
-      </label>
+    <div className={styles.divider}>
+      <Timer start={gameStart} />
+      <div className={styles.container}>
+        <WordArea loaded={!!text} wordElements={wordElements} />
+        <label htmlFor="user-input">
+          Write the above text here:
+          <textarea
+            name="user-input"
+            id="user-input"
+            className={styles.input}
+            value={input}
+            onChange={(e) => handleInput(e)}
+            // eslint-disable-next-line jsx-a11y/no-autofocus
+            autoFocus
+            spellCheck="false"
+          />
+        </label>
+      </div>
     </div>
   );
 }
