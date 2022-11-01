@@ -33,14 +33,12 @@ function Game() {
 
   // Sets a random Wikipedia article summary as the game text
   useEffect(() => {
+    setInput('');
     setText('');
     fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary')
       .then((response) => response.json())
       .then((data) => {
         setText(data.extract);
-      })
-      .then(() => {
-        setInput('');
       });
   }, [gameOver]);
 
