@@ -50,14 +50,32 @@ function Timer({ start, typedWords, gameOver }: TimerProps) {
   return (
     <div className={styles.container}>
       <div className={styles.timerSection}>
-        <div>Current time: {time} s</div>
-        <div>Previous round time: {prevRoundTime} s</div>
-        <div>Best time: {bestTime} s</div>
+        <div className={styles.pair}>
+          <p>Current time</p>
+          <p className={styles.bigFont}>{time} s</p>
+        </div>
+        <div className={styles.pair}>
+          <p>Previous round time</p>
+          <p className={styles.bigFont}>{prevRoundTime} s</p>
+        </div>
+        <div className={styles.pair}>
+          <p>Best time</p>
+          <p className={styles.bigFont}>{bestTime} s</p>
+        </div>
       </div>
       <div className={styles.timerSection}>
-        <div>Current wpm: {wordsPerMinute}</div>
-        <div>Previous round wpm: {prevWordsPerMinute}</div>
-        <div>Best wpm: {bestWordsPerMinute}</div>
+        <div className={styles.pair}>
+          <p>Current wpm</p>
+          <p className={styles.bigFont}>{wordsPerMinute}</p>
+        </div>
+        <div className={styles.pair}>
+          <p>Previous round wpm</p>
+          <p className={styles.bigFont}>{prevWordsPerMinute}</p>
+        </div>
+        <div className={styles.pair}>
+          <p>Best wpm</p>
+          <p className={styles.bigFont}>{bestWordsPerMinute}</p>
+        </div>
       </div>
     </div>
   );
