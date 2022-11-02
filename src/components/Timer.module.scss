@@ -1,13 +1,9 @@
 @use '../global.scss' as glob;
 
 .container {
-  background-color: glob.$green;
-  color: white;
   font-size: 1.2rem;
   min-width: 275px;
-  padding: 20px;
   border-radius: 2px;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -18,8 +14,11 @@
   flex-direction: column;
   gap: 25px;
   padding: 15px;
-  border: 1px solid white;
   border-radius: 2px;
+  background-color: glob.$green;
+  color: white;
+  border-radius: 2px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .pair {
