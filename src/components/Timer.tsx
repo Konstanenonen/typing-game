@@ -19,6 +19,14 @@ function Timer({ start, typedWords, gameOver }: TimerProps) {
   }
 
   useEffect(() => {
+    const bestWPM = Number(localStorage.getItem('bestWPM'));
+    const fastestTime = Number(localStorage.getItem('bestTime'));
+
+    setBestWordsPerMinute(bestWPM);
+    setBestTime(fastestTime);
+  });
+
+  useEffect(() => {
     const id = setInterval(() => {
       if (start) {
         setTime((t) => t + 1);
@@ -39,10 +47,14 @@ function Timer({ start, typedWords, gameOver }: TimerProps) {
 
       if (wordsPerMinute > bestWordsPerMinute) {
         setBestWordsPerMinute(wordsPerMinute);
+        localStorage.setItem('bestWPM', wordsPerMinute.toString());
       }
 
       if (time < bestTime || bestTime === 0) {
         setBestTime(time);
+        if (time !== 0) {
+          localStorage.setItem('bestTime', time.toString());
+        }
       }
     }
   }, [gameOver]);
