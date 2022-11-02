@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import ActiveWord from '../components/ActiveWord';
 import Timer from '../components/Timer';
 import WordArea from '../components/WordArea';
@@ -20,21 +21,35 @@ function Game() {
   const wordElements = wordArray.map((word, index) => {
     // Return default colored word if it hasn't come up yet
     if (inputArray[index] === undefined) {
-      return <span>{word}</span>;
+      return <span key={uuidv4()}>{word}</span>;
     }
 
     // Return a highlited word when it is the current word
     if (inputArray.length - 1 === index) {
-      return <ActiveWord correctWord={word} inputWord={inputArray[index]} />;
+      return (
+        <ActiveWord
+          key={uuidv4()}
+          correctWord={word}
+          inputWord={inputArray[index]}
+        />
+      );
     }
 
     // Return a green colored word if it was spelled correct
     if (word === inputArray[index]) {
-      return <span className={styles.correct}>{word}</span>;
+      return (
+        <span key={uuidv4()} className={styles.correct}>
+          {word}
+        </span>
+      );
     }
 
     // The word wasn't any of the above so it was spelled incorrectly
-    return <span className={styles.wrong}>{word}</span>;
+    return (
+      <span key={uuidv4()} className={styles.wrong}>
+        {word}
+      </span>
+    );
   });
 
   // Sets a random Wikipedia article summary as the game text
