@@ -10,5 +10,14 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  gap: 40px;
+}
+
+.timerSection {
+  display: flex;
+  flex-direction: column;
   gap: 20px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 2px;
 }
