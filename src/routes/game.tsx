@@ -61,7 +61,11 @@ function Game() {
 
   return (
     <div className={styles.divider}>
-      <Timer start={gameStart} typedWords={correctTypedWords} />
+      <Timer
+        start={gameStart}
+        typedWords={correctTypedWords}
+        gameOver={gameOver}
+      />
       <div className={styles.container}>
         <WordArea loaded={!!text} wordElements={wordElements} />
         <label htmlFor="user-input">
