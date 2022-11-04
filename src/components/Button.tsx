@@ -2,13 +2,13 @@ import React from 'react';
 import styles from './Button.module.scss';
 
 interface ButtonProps {
-  text: string;
+  children: React.ReactNode;
 }
 
-function Button({ text }: ButtonProps) {
+function Button({ children }: ButtonProps) {
   return (
     <button className={styles.button} type="button">
-      {text}
+      {children}
     </button>
   );
 }
