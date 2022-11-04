@@ -7,46 +7,53 @@ import styles from './home.module.scss';
 function Home() {
   const [input, setInput] = useState('');
   const [input2, setInput2] = useState('');
+  // eslint-disable-next-line no-unused-vars
+  const [animationCount, setAnimationCount] = useState(0);
 
   useEffect(() => {
+    setInput('');
+    setInput2('');
     setTimeout(() => {
       setInput('T');
-    }, 500);
+    }, 300);
     setTimeout(() => {
       setInput('Ty');
-    }, 1000);
+    }, 700);
     setTimeout(() => {
       setInput('Typ');
-    }, 1500);
+    }, 1200);
     setTimeout(() => {
       setInput('Typo');
-    }, 2000);
+    }, 1700);
     setTimeout(() => {
       setInput('Typ');
-    }, 2500);
+    }, 2200);
     setTimeout(() => {
       setInput('Typi');
-    }, 3000);
+    }, 2700);
     setTimeout(() => {
       setInput('Typin');
-    }, 3500);
+    }, 3200);
     setTimeout(() => {
       setInput('Typing');
-    }, 4000);
+    }, 3700);
 
     setTimeout(() => {
       setInput2('g');
-    }, 4500);
+    }, 4200);
     setTimeout(() => {
       setInput2('ga');
-    }, 5000);
+    }, 4700);
     setTimeout(() => {
       setInput2('gam');
-    }, 5500);
+    }, 5200);
     setTimeout(() => {
       setInput2('game');
-    }, 6000);
-  }, []);
+    }, 5700);
+    setTimeout(() => {
+      setAnimationCount((a) => a + 1);
+    }, 7000);
+  }, [animationCount]);
 
   return (
     <div className={styles.container}>
