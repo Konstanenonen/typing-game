@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ActiveWord from '../components/ActiveWord';
-import Button from '../components/Button';
 import styles from './home.module.scss';
 
 function Home() {
@@ -66,11 +65,9 @@ function Home() {
           {input} {input2}
         </p>
       </div>
-      <Button>
-        <Link className={styles.link} to="/game">
-          Go to game
-        </Link>
-      </Button>
+      <Link className={styles.link} to="/game">
+        Go to game
+      </Link>
       <p>Test your typing speed with random Wikipedia article summaries!</p>
     </div>
   );
