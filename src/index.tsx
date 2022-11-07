@@ -7,6 +7,7 @@ import Root from './routes/root';
 import Error from './routes/error';
 import Home from './routes/home';
 import Game from './routes/game';
+import Credits from './routes/credits';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'game/', element: <Game /> },
+      { path: 'credits/', element: <Credits /> },
     ],
   },
 ]);
