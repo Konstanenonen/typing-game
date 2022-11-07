@@ -1,0 +1,12 @@
+@use '../global.scss' as glob;
+
+.container {
+  background-color: glob.$green;
+  color: white;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}

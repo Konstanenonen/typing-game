@@ -1,5 +1,6 @@
 import React from 'react';
 import { Outlet, NavLink } from 'react-router-dom';
+import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 import styles from './root.module.scss';
 
@@ -36,9 +37,9 @@ function Root() {
       <div className={styles.stretch}>
         <Outlet />
       </div>
-      <Navbar>
+      <Footer>
         <p>Made by Konsta Nenonen</p>
-      </Navbar>
+      </Footer>
     </div>
   );
 }
