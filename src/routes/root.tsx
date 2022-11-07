@@ -11,7 +11,8 @@ function Root() {
           className={({ isActive }) =>
             isActive ? styles.navLinkActive : styles.navLink
           }
-          to="/home"
+          to="/"
+          end
         >
           Home
         </NavLink>
@@ -27,7 +28,7 @@ function Root() {
           className={({ isActive }) =>
             isActive ? styles.navLinkActive : styles.navLink
           }
-          to="/Credits"
+          to="/credits"
         >
           Credits
         </NavLink>
