@@ -1,0 +1,15 @@
+@use '../global.scss' as glob;
+
+.container {
+  padding: 125px 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  align-items: center;
+  font-size: 1.2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
