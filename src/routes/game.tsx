@@ -60,7 +60,9 @@ function Game() {
       fetch('https://en.wikipedia.org/api/rest_v1/page/random/summary')
         .then((response) => response.json())
         .then((data) => {
-          setText(data.extract);
+          const sanitizedWhitespace = data.extract.replace(/\s/gi, ' ');
+          const sanitizedLine = sanitizedWhitespace.replace(/[–—]/gi, '-');
+          setText(sanitizedLine);
           setGameOver(false);
         });
     }
