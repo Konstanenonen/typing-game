@@ -13,14 +13,18 @@
 }
 
 .navLink {
-  color: white;
-  font-size: 1.2rem;
   text-decoration: none;
+  color: white;
+  width: 100px;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .navLinkActive {
-  font-weight: bold;
   color: white;
+  font-weight: bold;
   font-size: 1.2rem;
   text-decoration: underline;
+  width: 100px;
+  text-align: center;
 }
