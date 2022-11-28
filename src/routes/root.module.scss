@@ -47,6 +47,7 @@
 
   a {
     color: white;
+    transition: transform 0.3s;
   }
 
   a:visited {
@@ -54,6 +55,6 @@
   }
 
   a:hover {
-    font-size: 1.7rem;
+    transform: scale(1.7) translateY(-6px);
   }
 }
